@@ -1,0 +1,144 @@
+//Task 1
+
+import java.util.Scanner;
+public class Task_1{
+  public static void main(String[]args){
+    Scanner sc=new Scanner(System.in);
+    
+    int n=sc.nextInt();
+    
+    for(int i=0;i<n;i++){
+      int x=sc.nextInt();
+      int y=sc.nextInt();
+      int sum=0;
+      
+      if(x%2==0){
+        x=x+1;
+      }
+      for(int j=0; j<y;j++){
+        sum=sum+(x+(2*j));
+      }
+      System.out.println(sum);
+    }
+  }
+}
+
+//Task 2
+
+import java.util.Scanner;
+public class Task_2{
+  public static void main(String[]args){
+    Scanner sc=new Scanner(System.in);
+    
+    int length=sc.nextInt();
+    int width=sc.nextInt();
+    
+    for(;width>0;width--){
+      
+      for(int i=1;i<=length;i++){
+        System.out.print(i);
+    }
+      System.out.println();
+    }
+  }
+}
+
+//Task 3
+
+import java.util.Scanner;
+public class Task_3{
+  public static void main(String[]args){
+    Scanner sc=new Scanner(System.in);
+    
+    System.out.println("Start:");
+    int start=sc.nextInt();
+    System.out.println("End:");
+    int end=sc.nextInt();
+    
+    for(;start<=end;start++){
+      boolean flag=true;
+      
+      for(int i=2;i<start;i++){
+
+        if(start%i==0){
+          flag=false;
+          break;
+        }
+      }
+      
+      if (start==1){
+        flag=false;
+      }
+      
+      if(flag==true){
+          System.out.println(start);
+        }
+      
+    }
+  }
+}
+//Task 4
+
+import java.util.Scanner;
+public class Task_4{
+  public static void main(String[]args){
+    Scanner sc=new Scanner(System.in);
+    
+    System.out.print("Number of customer:");
+    int n=sc.nextInt();
+    
+    for(int i=1;i<=n;i++){
+      
+      System.out.print("Item Number for Customer-"+i+":");
+      int k=sc.nextInt();
+      
+      double sum=0;
+      
+      for(int j=1;j<=k;j++){
+        System.out.print("Item-"+j+":");
+        double cost=sc.nextDouble();
+        sum=sum+cost;
+      }
+      double avg= sum/k;
+      System.out.println("Average for Customer-"+i+":"+avg);
+    }
+  }
+}
+           
+//Task 5
+
+import java.util.Scanner;
+public class Task_5{
+  public static void main(String[]args){
+    Scanner sc=new Scanner(System.in);
+    
+    System.out.print("Start:");
+    int start=sc.nextInt();
+    System.out.print("End:");
+    int end=sc.nextInt();
+    
+    System.out.println("Armstrong numbers:");
+    
+    for(;start<=end;start++){
+      
+      int power=0;
+      
+      for(int temp1=start;temp1>0;temp1/=10){
+        power++;
+      }
+      
+      double sum=0;
+      int temp2=start;
+      
+      for(int i=0;i<power;i++){
+        int digit=temp2%10;
+        temp2/=10;
+        sum=sum+Math.pow(digit,power);
+      }
+      
+      if (sum==start){
+        System.out.println(start);
+      }
+    }
+  }
+}

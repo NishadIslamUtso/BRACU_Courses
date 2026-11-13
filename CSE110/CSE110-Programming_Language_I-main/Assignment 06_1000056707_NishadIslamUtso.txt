@@ -1,0 +1,190 @@
+//Task 1
+
+import java.util.Scanner;
+public class Task1{
+  public static void main(String[]args){
+    
+    Scanner sc = new Scanner(System.in);
+    
+    String m = sc.nextLine();
+    String n=m.toLowerCase();
+    int v=0;
+    int c=0;
+    
+    for(int i=0;i<n.length();i++){
+      char ch=n.charAt(i);
+      
+      if(ch=='a'|| ch=='e'|| ch=='i'|| ch=='o'|| ch=='u'){
+        v++;
+       }
+      else if(ch>=97 && ch<=122){
+        c++;
+       }
+    }
+    if (v>0 && c>0 && v%3==0 && c%5==0) {
+            System.out.println("Aaarr! Me Plunder!!");
+    }
+    else {
+      System.out.println("Blimey! No Plunder!!");
+    }
+  }
+}
+
+//Task 2
+
+import java.util.Scanner;
+public class Task2{
+  public static void main(String[]args){
+    Scanner sc = new Scanner(System.in);
+    
+    String m = sc.nextLine();
+    String n = sc.nextLine();
+    String temp="";
+    
+    for(int i=0; i<m.length();i++){
+      
+      boolean duplicate=false;
+      
+      for(int j=0; j<n.length();j++){
+        
+        if(m.charAt(i)==n.charAt(j)){
+          duplicate=true;
+          break;
+        }
+      }
+      
+      if (!duplicate){
+        temp+=m.charAt(i);
+      }
+    }
+    
+    for(int i=0; i<n.length();i++){
+      
+      boolean duplicate=false;
+      
+      for(int j=0; j<m.length();j++){
+        
+        if(n.charAt(i)==m.charAt(j)){
+          duplicate=true;
+          break;
+        }
+      }
+      
+      if (!duplicate){
+        temp=temp+n.charAt(i);
+      }
+    }
+    temp=temp.toUpperCase();
+    System.out.println(temp);
+  }
+}
+ 
+        
+
+//Task 3
+
+import java.util.Scanner;
+public class Task3{
+  public static void main(String[]args){
+    Scanner sc = new Scanner(System.in);
+    
+    String n = sc.nextLine();
+    String temp="";
+    boolean upper=false;
+    
+    for(int i=0;i<n.length();i++){
+      char ch=n.charAt(i);
+      
+      if((ch>='a' && ch<='z')||(ch>='A' && ch<='Z')){
+        
+        if(upper){
+        temp+=Character.toUpperCase(ch);
+        }
+        else {
+          temp+=Character.toLowerCase(ch);
+        }
+        upper=!upper;
+      }
+      else{
+        temp+=ch;
+      }
+    }
+    System.out.println(temp);
+  }
+}
+        
+//Task 4
+
+import java.util.Scanner;
+public class Task4{
+  public static void main(String[]args){
+    Scanner sc = new Scanner(System.in);
+    
+    String n = sc.nextLine();
+    boolean upper=false,lower=false,digit=false,special=false;
+    
+    for(int i=0;i<n.length();i++){
+      
+      char ch=n.charAt(i);
+      
+      if(ch>='A' && ch<='Z'){
+      upper=true;
+      }
+      else if(ch>='a' && ch<='z'){
+      lower=true;
+      }
+      else if(ch>='0' && ch<='9'){
+      digit=true;
+      }
+      else if((ch!=' ') && (!(ch>='a' && ch<='z')) && (!(ch>='A' && ch<='Z')) && (!(ch>='0' && ch<='9'))){
+      special=true;
+      }
+    }
+    if(n.length()>= 8 && upper && lower && digit && special){
+      System.out.println("True");
+    }
+    else{
+      System.out.println("False");
+    }
+  }
+}
+
+//Task 5
+
+import java.util.Scanner;
+public class Task5 {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    
+    String name = sc.nextLine();
+    String pass = sc.nextLine();
+    boolean invalid=false;
+    int i=0;
+    for(int j=0; j<pass.length();j++){
+        
+      if(name.charAt(i)==pass.charAt(j)){
+          
+        i++;
+        
+        if(i>=name.length()){
+          invalid=true;
+          break;
+        }
+      }
+      else{
+        
+        if (i>0){
+          j--;
+        }
+        i=0;
+      }
+    }
+    
+    if (invalid){
+      System.out.println("Invalid");
+    }
+    else {
+      System.out.println("Valid");
+    }
+  }
+}

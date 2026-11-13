@@ -1,0 +1,208 @@
+//Task 1
+
+import java.util.Scanner;
+public class Task1{
+  public static void main(String[]args){
+    
+    Scanner sc = new Scanner(System.in);
+    int N = sc.nextInt();
+    int[] arr= new int[N];
+    
+    for(int i =0; i<N; i++){
+      arr[i]=sc.nextInt();
+    }
+    System.out.println("Original array:");
+    
+    for(int i =0; i<N; i++){
+      System.out.print(arr[i]+" ");
+    }
+    System.out.println();
+    
+    for(int i=0; i<N;i++){
+      
+      if(arr[i]>0){
+        arr[i]=1;
+      }
+      else if(arr[i]<0){
+        arr[i]=0;
+      }
+    }
+    System.out.println("After modifying:");
+    
+    for(int i =0; i<N; i++){
+      System.out.print(arr[i]+" ");
+    }
+    System.out.println();
+  }
+}
+
+//Task 2
+
+import java.util.Scanner;
+public class Task2{
+  public static void main(String[]args){
+    
+    Scanner sc = new Scanner(System.in);
+    int N = sc.nextInt();
+    int[] arr= new int[N];
+    
+    for(int i =0; i<N; i++){
+      System.out.print("Enter a number:");
+      arr[i]=sc.nextInt();
+    }
+    int x =sc.nextInt();
+    boolean flag=false;
+    
+    for(int i =0; i<N; i++){
+      
+      if(x==arr[i]){
+        System.out.println(x+" is at index "+i);
+        flag=true;
+        break;
+      }
+    }
+    
+    if(!(flag)){
+      System.out.println("Element not found");
+    }
+  }
+}
+
+//Task 3
+
+import java.util.Scanner;
+public class Task3{
+  public static void main(String[]args){
+    
+    Scanner sc= new Scanner(System.in);
+    System.out.print("Enter the length of the array: ");
+    int N= sc.nextInt();
+    double[] arr= new double[N];
+    
+    for(int i= 0; i < N; i++){
+      System.out.print("Enter a number: ");
+      arr[i]= sc.nextDouble();
+    }
+    
+    double max = arr[0];
+    double min = arr[0];
+    int maxIndex = 0;
+    int minIndex = 0;
+    double sum = 0;
+    
+    for(int i=0;i<N;i++){
+      
+      if(arr[i]>max){
+        max= arr[i];
+        maxIndex= i;
+      }
+      
+      if(arr[i]<min){
+        min= arr[i];
+        minIndex= i;
+      }
+      sum+=arr[i];
+    }
+    
+    double avg= sum/N;
+    
+    System.out.println("Maximum element "+max+" found at index "+maxIndex);
+    System.out.println("Minimum element "+min+" found at index "+minIndex);
+    System.out.println("Summation: "+sum);
+    System.out.println("Average: "+avg);
+  }
+}
+
+//Task 4
+
+import java.util.Scanner;
+public class Task4{
+  public static void main(String[]args){
+    
+    Scanner sc= new Scanner(System.in);
+    
+    System.out.print("Please enter the length of array 1: ");
+    int n1= sc.nextInt();
+    int[] arr1= new int[n1];
+    
+    System.out.println("Please enter the elements of the arr1:");
+    
+    for(int i=0;i<n1;i++){
+      arr1[i]= sc.nextInt();
+    }
+    
+    System.out.print("Please enter the length of array 2: ");
+    
+    int n2= sc.nextInt();
+    int[] arr2= new int[n2];
+    
+    System.out.println("Please enter the elements of the arr2:");
+    
+    for(int i=0;i<n2;i++){
+      arr2[i]=sc.nextInt();
+    }
+    
+    boolean flag=true;
+    
+    for(int i=0;i<n2;i++){
+      boolean found = false;
+      
+      for(int j=0;j<n1;j++){
+        
+        if(arr2[i]==arr1[j]){
+          found=true;
+          break;
+        }
+      }
+      
+      if(!found){
+        flag=false;
+        break;
+      }
+    }
+    
+    if(flag){
+      System.out.println("Array 2 is a subset of Array 1.");
+    }
+    else{
+      System.out.println("Array 2 is not a subset of Array 1.");
+    }
+  }
+}
+
+//Task 5
+
+public class Task5{
+  public static void main(String[]args){
+    
+    int[] mark = {85, 90, 75, 44, 99};
+    String[] name = {"Bob", "Alice", "Max", "Marry", "Rosy"};
+    int n = mark.length;
+    
+    for(int i=0;i<n-1;i++){
+      
+      for(int j=0;j<n-i-1;j++){
+        
+        if(mark[j]>mark[j+1]){
+          int tempMark=mark[j];
+          mark[j]=mark[j + 1];
+          mark[j+1]=tempMark;
+          
+          String tempName=name[j];
+          name[j]=name[j+1];
+          name[j+1]= tempName;
+        }
+      }
+    }
+    
+    for(int i=0;i<n;i++){
+      System.out.print(mark[i]+" ");
+    }
+    System.out.println();
+    
+    for(int i=0;i<n;i++){
+      System.out.print(name[i]+" ");
+    }
+    System.out.println();
+  }
+}

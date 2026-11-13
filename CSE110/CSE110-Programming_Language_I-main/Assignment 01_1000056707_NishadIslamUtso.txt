@@ -1,0 +1,62 @@
+//Task 1
+public class code1{
+  public static void main(String[] args){
+    int min= 3456789;
+    int year= min/525600;
+    int day= (min%525600)/1440;
+    System.out.println("3456789 minutes is approximately "+year+" years and "+day+" days");
+  }
+}
+
+//Task 2
+public class code2{
+  public static void main(String[] args) {
+    int a=2;
+    int b=5;
+    int c=8;
+    int d= (2*b*(c-a)/3)+7;
+    System.out.println("The value of d is: "+d);
+    
+  }
+}
+
+//Task 3
+public class code3{
+  public static void main(String[] args) {
+        int studentId= 1000056707;    
+        int lastTwo= studentId%100;
+        int lastDigit= lastTwo%10;
+        int secondLastDigit= (lastTwo/10)%10;
+
+        System.out.println("Reversed last two digits of student ID:");
+        System.out.println(lastDigit);
+        System.out.println(secondLastDigit);
+    }
+}
+
+//Task 4
+public class code4{
+  public static void main(String[] args) {
+    int a=8;
+    int b=3;
+    double side= Math.sqrt((a/2)*(a/2)+b*b);
+    double area=(3*(Math.sqrt(3))/2)*(side*side);
+    double cir= 6*side;
+    System.out.println("Area= "+area+" and Circumference= "+cir); 
+  }
+}
+
+//Task 5
+public class code5{
+  public static void main(String[] args) {
+    double a=4.5;
+    double b=9.5;
+    double c= Math.sqrt(a*a+b*b);
+    double sinA= a/c;
+    double cosA= b/c;
+    double sinB= cosA;
+    double cosB= sinA;
+      
+    System.out.println("sin(A)= "+sinA+" ,cos(A)= "+cosA+" ,sin(B)= "+sinB+" ,cos(B)= "+cosB); 
+  }
+}
