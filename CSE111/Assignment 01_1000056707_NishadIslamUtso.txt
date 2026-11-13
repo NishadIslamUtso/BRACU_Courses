@@ -1,0 +1,106 @@
+//Task 1
+import java.util.*;
+public class Task1{
+  public static void main(String[]args){
+    
+    Scanner sc=new Scanner(System.in);
+    int n1= sc.nextInt();
+    int n2= sc.nextInt();
+    int a=0;
+    int b=0;
+    
+    if(n1>n2){
+      a=n1;
+      b=n2;
+    }
+    else{
+      a=n2;
+      b=n1;
+    }
+    
+    int count=0;
+    
+    for(int i=b+1;i<a;i++){
+      if(i==2){
+        count++;
+        continue;
+      }
+      for(int j=2;j<i;j++){
+        if(i%j==0){
+          break;
+        }
+        else if(j==i-1){
+          count++;
+        }
+      }
+    }
+    
+    System.out.println("There are "+count+" prime numbers between "+b+" and "+a+".");
+  }
+}
+      
+      
+//Task 2
+import java.util.*;
+public class Task2{
+  public static void main(String[]args){
+    
+    Scanner sc=new Scanner(System.in);
+    String n= sc.nextLine();
+    
+    String m="";
+    
+    for(int i=0;i<n.length(); i++){
+      
+      if(n.charAt(i)=='a'){
+        m=m+'z';
+        continue;
+      }
+      
+      m=m+(char)((int)n.charAt(i)-1);
+    }
+    System.out.println(m);
+  }
+}
+        
+//Task 3
+import java.util.*;
+public class Task3{
+  public static void main(String[]args){
+    
+    Scanner sc=new Scanner(System.in);
+    int N= sc.nextInt();
+    
+    int[] arr=new int[N];
+    
+    for(int i=0;i<N;i++){
+      arr[i]=sc.nextInt();
+    }
+    int count=1;
+    boolean[] counted = new boolean[N];
+    
+    for(int i=0;i<N;i++){
+      if(counted[i]==true){
+        continue;
+      }
+      for(int j=i+1;j<N;j++){
+        
+        if(arr[i]==arr[j]){
+          count++;
+          counted[j]=true;
+        }
+      }
+      
+      System.out.println(arr[i] + " - " + count + " times");
+      count=1;
+    }
+  }
+}
+        
+//Task 4
+public class CSECourse{
+  
+  String courseName="Programming Language II";
+  String courseCode="CSE111";
+  int credit=3;
+}

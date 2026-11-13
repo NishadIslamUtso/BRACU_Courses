@@ -1,0 +1,85 @@
+//Task 1
+
+import java.util.Scanner;
+public class Task1{
+  //method
+  public static int factorial(int n){
+    if(n==0||n==1){
+      return 1;
+    }
+    return n*factorial(n-1);
+  }
+  //main
+  public static void main(String[]args){
+    
+    Scanner sc= new Scanner(System.in);
+    int n=sc.nextInt();
+    int result=factorial(n);
+    System.out.println(result);
+  }
+}
+
+//Task 2
+
+import java.util.Scanner;
+public class Task2{
+  //method
+  public static int power(int b,int e){
+    if (e==0){
+      return 1;
+    }
+    return b*power(b,e-1);
+  }
+  
+  //main
+  public static void main(String[]args){
+    Scanner sc= new Scanner(System.in);
+    int base=sc.nextInt();
+    int expo=sc.nextInt();
+    int x=power(base,expo);
+    System.out.println(x);
+  }
+}
+
+//Task 3
+
+public class Task3{
+  //method
+  public static void print_element(int[] arr,int index){
+    if (index==arr.length){
+      return;
+    }
+    System.out.println(arr[index]);
+    print_element(arr, index+1);
+  }
+  
+  //main
+  public static void main(String[]args){
+    int[] arr={5,6,2,1,8,7};
+    int index=2;
+    print_element(arr, index);
+  }
+}
+
+//Task 4
+
+import java.util.Scanner;
+public class Task4{
+  //method
+  public static int fibonacci(int n){
+    if (n==0){
+      return 0;
+    }
+    if(n==1){
+      return 1;
+    }
+    return fibonacci(n-1) + fibonacci(n-2);
+  }
+  
+  //main
+  public static void main(String[]args){
+    Scanner sc= new Scanner(System.in);
+    
+    System.out.println(fibonacci(sc.nextInt()));
+  }
+}

@@ -1,0 +1,234 @@
+//Task 1
+
+import java.util.Scanner;
+public class Task1{
+  public static void main(String[]args){
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    int rows=2*n-1;
+    
+    for(int i=1;i<=rows;i++){
+      int numCount=0;
+      int spaces=0;
+      
+      if(i<=n){
+        numCount=2*i-1;
+        spaces=n-i;
+       }
+      else{
+        numCount=2*(rows-i+1)-1;
+        spaces=i-n;
+       }
+      
+      for(int j=1;j<=spaces;j++){
+        System.out.print(" ");
+       }
+      
+      for(int j=1;j<=numCount;j++){
+        System.out.print(j);
+       }
+      System.out.println();
+    }
+  }
+}
+
+
+//Task 2
+
+import java.util.Scanner;
+public class Task2{
+  public static void main(String[]args){
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    
+    for(int i=1;i<=n;i++){
+      int space=n-i;
+      
+      for(int j=1;j<=space;j++){
+        System.out.print(" ");
+      }
+      if(i==1){
+        System.out.println(n);
+      }
+      else if(i==n){
+        
+        for(int j=1;j<=n;j++){
+          System.out.print(j);
+        }
+        System.out.println();
+      }
+      else{
+        System.out.print(n-i+1);
+        
+        for(int j=1;j<=i-2;j++){
+          System.out.print(" ");
+        }
+        System.out.println(n);
+      }
+    }
+  }
+}
+        
+
+//Task 3
+
+import java.util.Scanner;
+public class Task3{
+  public static void main(String[]args){
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    
+    for(int i=1;i<=n;i++){
+      int space=n-i;
+      
+      for(int j=1;j<=space;j++){
+        System.out.print(" ");
+      }
+      if(i==1){
+        System.out.println(1);
+      }
+      else if(i==n){
+        
+        for(int j=1;j<=n*2-1;j++){
+          System.out.print(j);
+        }
+        System.out.println();
+      }
+      else{
+        System.out.print(1);
+        
+        for(int j=1;j<=i*2-3;j++){
+          System.out.print(" ");
+        }
+        System.out.println(2*i-1);
+      }
+    }
+  }
+}
+        
+//Task 4
+
+import java.util.Scanner;
+public class Task4 {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    
+    int totalRows = 2 * n - 1;
+    for (int i = 1; i <= totalRows; i++) {
+      int spaces, digits;
+     
+      if (i <= n) {
+        spaces = n - i;
+        digits = 2 * i - 1;
+      }
+      else {
+        spaces = i - n;
+        digits = 2 * (totalRows - i + 1) - 1;
+      }
+      
+      for (int j = 1; j <= spaces; j++) {
+        System.out.print(" ");
+        }
+      
+      for (int j = 1; j <= digits; j++) {
+        
+        if (j == 1 || j == digits) {
+          System.out.print(j % 10);
+         }
+        else {
+          System.out.print(" ");
+         }
+       }
+      System.out.println();
+    }
+  }
+}
+
+
+//Task 5
+
+import java.util.Scanner;
+public class Task5 {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    
+    int n = sc.nextInt();
+    for (int i = 1; i <= n; i++) {
+      
+      for (int j = 1; j <= n - i; j++) {
+        System.out.print(" ");
+       }
+      
+       for (int j = 1; j <= i; j++) {
+         System.out.print(j);
+         }
+       
+       for (int j = i - 1; j >= 1; j--) {
+         System.out.print(j);
+         }
+       System.out.println();
+    }
+  }
+}
+
+//Task 6
+
+import java.util.Scanner;
+public class Task6 {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    
+    for (int i = n; i >= 1; i--) {
+      
+      for (int j = 1; j <= n - i; j++) {
+        System.out.print(" ");
+      }
+      
+      for (int j = 1; j <= i; j++) {
+        System.out.print(j);
+      }
+      
+      for (int j = i - 1; j >= 1; j--) {
+         System.out.print(j);
+      }
+      System.out.println();
+    }
+  }
+}
+
+
+//Task 7
+
+import java.util.Scanner;
+public class Task7 {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    int totalRows = n;
+    for (int i = n; i >= 1; i -= 2) {
+      
+      for (int j = 1; j <= (n - i) / 2; j++) {
+        System.out.print(" ");
+      }
+      
+      for (int j = 1; j <= i; j++) {
+        System.out.print(j);
+      }
+      System.out.println();
+    }
+    
+    for (int i = 3; i <= n; i += 2) {
+      
+      for (int j = 1; j <= (n - i) / 2; j++) {
+        System.out.print(" ");
+      }
+      
+      for (int j = 1; j <= i; j++) {
+        System.out.print(j);
+      }
+      System.out.println();
+    }
+  }
+}

@@ -1,0 +1,175 @@
+//Task1
+public class Toy{
+  public String name;
+  public int price;
+  
+  public Toy(String x,int y){
+    name=x;
+    price=y;
+    System.out.println("A new toy has been made!");
+  }
+  
+  public void updatePrice(int y){
+    price=y;
+  }
+  
+  public void showPrice(){
+    System.out.println("price: "+price+" Taka");
+  }
+  
+  public void updateName(String x){
+    System.out.println("Changing old name: "+name);
+    name=x;
+    System.out.println("new name: "+name);
+  }
+}
+
+//Task2
+public class Cart{
+  String [] itm=new String [3];
+  double [] prc=new double [3];
+  double discount=0.0;
+  double total;
+  int cartNo;
+  int count;
+  
+  public void create_cart(int a){
+    cartNo=a;
+  }
+  
+  public void addItem(String c,double d){
+    if (count<3){
+      itm[count]=c;
+      prc[count]=d;
+      System.out.println(c+" added to cart "+cartNo+".");
+      count++;
+      System.out.println("You have "+(count)+" item(s) in your cart now.");
+      total+=d;
+    }
+    else{
+      System.out.println("You already have 3 items on your cart");
+    }
+  }
+  
+  public void addItem(double d,String c){
+    addItem(c,d);
+  }
+  
+  public void cartDetails(){
+    System.out.println("Your cart(c"+cartNo+") : ");
+    
+    for(int i=0;i<count;i++){
+      System.out.println(itm[i]+" - "+prc[i]);}
+    
+    System.out.println("Discount Applied: "+discount+"%");
+    System.out.println("Total price: "+total);
+  }
+  
+  public void giveDiscount(int d){
+    discount=d;
+    total=total-(total*discount/100);
+  }  
+}
+
+//Task3
+public class Reader{
+  String name="New user";
+  int capacity=0;
+  String [] books;
+  int count;
+  
+  public Reader(String x){
+    name=x;
+    capacity=2;
+    System.out.println("A new reader is created!");
+    books=new String [capacity];
+  }
+  
+  public Reader(String x,int y){
+    name=x;
+    capacity=y;
+    System.out.println("A new reader is created!");
+    books=new String[capacity];
+  }
+  
+  public void addBook(String a){
+    if(count<capacity){
+      books[count]=a;
+      count++;
+    }
+    
+    else{System.out.println("No more capacity");
+    }
+  }
+  public void updateCapacity(int n){
+    String[] newBooks=new String[n];
+    for(int i=0;i<count;i++){
+      newBooks[i]=books[i];
+    }
+    books=newBooks;
+    capacity=n;
+    System.out.println("Capacity has changed to "+n);
+  }
+  
+  public void readerInfo(){
+    System.out.println("Name: "+name);
+    System.out.println("Capacity: "+capacity);
+    System.out.println("Books: ");
+    if(count==0){System.out.println("No books added yet");
+    }
+    else{
+      for(int i=0;i<count;i++){
+        System.out.println("Book "+(i+1)+": "+books[i]);
+      }
+    }
+  }
+}
+
+//Task4
+public class MoneyTracker{
+  String name;
+  double balance;
+  double lstIncome;
+  double lstSpent;
+  
+  public MoneyTracker(){
+    System.out.println("A new money tracker has been launched.");
+  }
+  
+  public void createTracker(String a){
+    name =a;
+    balance =1.0;
+  }
+  
+  public void income(double a){
+    lstIncome =a;
+    balance+=a;
+    System.out.println("Balance Updated!");
+  }
+  
+  public void expense(double a){
+    if (balance < a){
+      System.out.println("Not enough balance.");
+    }
+    else{
+      balance-=a;
+      lstSpent =a;
+      
+      if (balance !=0){
+        System.out.println("Balance Updated.");
+      }
+      else{
+        System.out.println("You're broke!");
+      }
+    }
+  }
+  
+  public void showHistory() {
+    System.out.println("Last added: " + lstIncome);
+    System.out.println("Last spent: " + lstSpent);
+  }
+  
+  public String info() {
+    return "Name: "+name+"\nCurrent Balance: "+balance;
+  }
+}

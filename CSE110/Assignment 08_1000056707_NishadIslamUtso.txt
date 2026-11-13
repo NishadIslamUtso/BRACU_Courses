@@ -1,0 +1,145 @@
+//Task 1
+
+import java.util.Scanner;
+public class Task1{
+  //1A
+  public static boolean isPrime(int n){
+    if (n<=1){
+      return false;
+    }
+    for(int i=2;i<n;i++){
+      
+      if(n%i==0){
+        return false;
+      }
+    }
+    return true;
+  }
+  //1B
+  public static boolean isPerfect(int n){
+    if (n<=1){
+      return false;
+    }
+    int sum=0;
+    
+    for(int i=1;i<n;i++){
+      if(n%i==0){
+        sum+=i;
+      }
+    }
+    return sum==n;
+  }
+  //1C
+  public static int special_sum(int n){
+    int sum=0;
+    
+    for(int i=1;i<=n;i++){
+      if(isPrime(i)||isPerfect(i)){
+        sum+=i;
+      }
+    }
+    return sum;
+  }
+  //main
+  public static void main(String[]args){
+    
+    Scanner sc= new Scanner(System.in);
+    int n=sc.nextInt();
+    int result=special_sum(n);
+    System.out.println(result);
+  }
+}
+
+//Task 2
+
+import java.util.Scanner;
+public class Task2{
+  //2A
+  public static void showDots(int n){
+    
+    for (int i=0;i<n;i++) {
+      System.out.print(".");
+    }
+  }
+  
+  //2B
+  public static void show_palindrome(int n){
+    
+     for (int i=1;i<=n;i++){
+       System.out.print(i);
+     }
+     
+     for (int i=n-1;i>=1;i--){
+       System.out.print(i);
+     }
+  }
+  
+  //2C
+  public static void showDiamond(int n){
+    
+    for (int i=1;i<=n;i++){
+      
+      showDots(n-i);
+      show_palindrome(i);
+      showDots(n-i);
+      System.out.println();
+    }
+    
+    for (int i=n-1;i>=1;i--){
+      
+      showDots(n-i);
+      show_palindrome(i);
+      showDots(n-i);
+      System.out.println();
+    }
+  }
+  
+  //main
+  public static void main(String[]args){
+    Scanner sc= new Scanner(System.in);
+    int n=sc.nextInt();
+    showDiamond(n);
+  }
+}
+
+//Task 3
+
+import java.util.Scanner;
+public class Task3{
+  //3A
+  public static double calcTax(int age,double salary){
+    
+    if(age<18){
+      return 0.0;
+    }
+    else if(salary<10000){
+      return 0.0;
+    }
+    else if(salary<=20000){
+      return salary*0.07;
+    }
+    else{
+      return salary * 0.14;
+    }
+  }
+  
+  //3B
+  public static void calcYearlyTax(){
+    Scanner sc = new Scanner(System.in);
+    
+    int age = sc.nextInt();
+    double totalTax = 0.0;
+    
+    for (int i=1;i<=12;i++){
+      double salary=sc.nextDouble();
+      double tax=calcTax(age, salary);
+      totalTax+=tax;
+      System.out.println("Month"+i +" tax: "+tax);
+    }
+    System.out.println("Total Yearly Tax: "+totalTax);
+  }
+  //main
+  public static void main(String[]args){
+    calcYearlyTax();
+  }
+}

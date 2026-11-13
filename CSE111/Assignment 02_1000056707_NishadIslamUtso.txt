@@ -1,0 +1,140 @@
+//Task 1
+public class ImaginaryNumber{
+  public int realPart=0;
+  public int imaginaryPart=0;
+  
+  public String printNumber(){
+    String str= realPart+" + "+imaginaryPart+"i";
+    return str;
+  }
+}      
+      
+//Task 2
+public class Assignment{
+  public int tasks;
+  public String difficulty;
+  public boolean submission;
+  
+  public void printDetails(){
+    System.out.println("Number of tasks: "+tasks);
+    System.out.println("Difficulty level: "+difficulty);
+    System.out.println("Submission required: "+submission);
+  }
+  
+  public String makeOptional(){
+    if(submission==false){
+      return "Submission is already not required";
+    }
+    
+    else{
+      submission=false;
+       return "Assignment will not require submission";
+    }
+  }
+}
+        
+//Task 3
+public class Employee{
+  public String name;
+  public float salary;
+  public String designation;
+  
+  public void newEmployee(String n){
+    name = n;
+    salary = 30000.0f;
+    designation = "junior";
+  }
+  
+  public void displayInfo(){
+    System.out.println("Employee Name: "+name);
+    System.out.println("Employee Salary: "+salary+" Tk");
+    System.out.println("Employee Designation: "+designation);
+  }
+  
+  public void calculateTax(){
+    if(salary <= 30000.0){
+      System.out.println("No need to pay tax");
+    }
+    else if(salary > 50000.0){
+      System.out.println(name+" Tax Amount: "+(salary * 0.3)+" Tk");
+    }
+    else{
+      System.out.println(name+" Tax Amount: "+(salary * 0.1)+" Tk");
+    }
+  }
+  
+  public void promoteEmployee(String p){
+    designation =p;
+    System.out.println(name+" has been promoted to "+p);
+    
+    if(p.equals("senior")){
+      salary += 25000.0;
+    }
+    else if(p.equals("lead")){
+      salary += 50000.0;
+    }
+    else if(p.equals("manager")) {
+      salary += 75000.0;
+    }
+    
+    System.out.printf("New Salary: %.2f Tk\n", salary);
+  }
+}
+
+        
+//Task 4
+public class MobilePhone{
+  
+  public int capacity;
+  public String[] names;
+  public int[] numbers;
+  public int totalContacts = 0;
+  
+  public void setContactCapacity(int c){
+    
+    capacity = c;
+    names = new String[capacity];
+    numbers = new int[capacity];
+  }
+  
+  public void addContact(String n,int num){
+    
+    if(totalContacts < capacity){
+      names[totalContacts]= n;
+      numbers[totalContacts]= num;
+      totalContacts++;
+      System.out.println("The contact of "+n+" is added.");
+    }
+    else{
+      System.out.println("Storage Full!!");
+    }
+  }
+  
+  public void makeCall(int num){
+    
+    boolean found =false;
+    
+    for(int i=0;i<totalContacts;i++){
+      
+      if(numbers[i] == num){
+        System.out.println("Calling "+ names[i]+ " . . .");
+        found = true;
+        break;
+      }
+    }
+    
+    if(!found){
+      System.out.println("Calling "+num+ " . . .");
+    }
+  }
+  
+  public void details(){
+    
+    System.out.println("Total Contacts: "+totalContacts);
+    System.out.println("Contact List:");
+    
+    for(int i=0;i<totalContacts;i++){
+      System.out.println(names[i]+":"+numbers[i]);
+    }
+  }
+}

@@ -1,0 +1,187 @@
+//Task 1
+import java.util.Scanner;
+public class Task1{
+  public static void main(String[]args){
+    
+    System.out.println("Enter an integer number");
+    Scanner sc = new Scanner(System.in);
+    int n=sc.nextInt();
+    
+    if (n%5==0 && n%7==0){
+    System.out.println("Invalid: Divisible by both");
+    }
+    else if (n%5==0){
+    System.out.println("Divisible by 5 Only");
+    }
+    else if (n%7==0){
+    System.out.println("Divisible by 7 Only");
+    }
+    else{
+    System.out.println("No");
+    }
+  }
+}
+
+//Task 2
+import java.util.Scanner;
+public class Task2{
+  public static void main(String[]args){
+    
+    System.out.println("Enter age");
+    Scanner sc = new Scanner(System.in);
+    int age=sc.nextInt();
+    System.out.println("Enter payment");
+    int payment=sc.nextInt();
+    if (age<18 || payment<10000){
+    System.out.println("Your tax amounts in 0 Tk");
+    }
+    else if (payment>=10000 && payment<=20000){
+      int tax= payment*5/100;
+      System.out.println("Your tax amounts in "+tax+" Tk");
+    }
+     else {
+      int tax= payment*10/100;
+      System.out.println("Your tax amounts in "+tax+" Tk");
+     }
+  }
+}
+    
+
+//Task 3
+import java.util.Scanner;
+public class Task3{
+  public static void main(String[]args){
+    
+    Scanner sc= new Scanner(System.in);
+    
+    System.out.println("Enter the 1st float number");
+    float x= sc.nextFloat();
+    System.out.println("Enter the 2nd float number");
+    float y= sc.nextFloat();
+    System.out.println("Enter the 3rd float number");
+    float z= sc.nextFloat();
+    
+    if (x>=y && x>=z){
+      System.out.println("Maximum number is "+x);
+    }
+    else if (y>=x && y>=z){
+      System.out.println("Maximum number is "+y);
+    }
+    else if (z>=y && z>=x){
+      System.out.println("Maximum number is "+z);
+    }
+    
+    if (x<=y && x<=z){
+      System.out.println("Minimum number is "+x);
+    }
+    else if (y<=x && y<=z){
+      System.out.println("Minimum number is "+y);
+    }
+    else if (z<=y && z<=x){
+      System.out.println("Minimum number is "+z);
+    }
+    
+  }
+}
+
+//Task 4
+import java.util.Scanner;
+public class Task4{
+  public static void main(String[]args){
+    
+    Scanner sc= new Scanner(System.in);
+    
+    System.out.println("Enter length of the 1st side ");
+    float x= sc.nextFloat();
+    System.out.println("Enter length of the 2nd side");
+    float y= sc.nextFloat();
+    System.out.println("Enter length of the 3rd side");
+    float z= sc.nextFloat();
+    
+    if (x==y && x==z){
+      System.out.println("This is a Equilateral triangle");
+    }
+    else if ((y==x || y==z || z==x)&&(x==y || x==z)){
+      System.out.println("This is a Isosceles triangle");
+    }
+    else if (z!=y && z!=x && x!=y){
+      System.out.println("This is a Scalene triangle");
+    }
+    
+  }
+}
+
+//Task 5
+import java.util.Scanner;
+public class Task5{
+  public static void main(String[]args){
+    
+    Scanner sc = new Scanner(System.in);
+    
+    System.out.println("Enter the amount the customer need to pay(Taka)");
+    int paid = sc.nextInt();
+    
+    System.out.println("Enter the amount, customer gave(Taka)");
+    int given = sc.nextInt();
+    
+    if (given>paid){
+      int ret = given - paid;
+      System.out.println("The returned amount is "+ret+" taka");
+      
+      int n100=ret/100;
+      int n50= (ret-n100*100)/50;
+      int n20= (ret-n100*100-n50*50)/20;
+      int n10= (ret-n100*100-n50*50-n20*20)/10;
+      int n5= (ret-n100*100-n50*50-n20*20-n10*10)/5;
+      int n2= (ret-n100*100-n50*50-n20*20-n10*10-n5*5)/2;
+      int n1= (ret-n100*100-n50*50-n20*20-n10*10-n5*5-n2*2)/1;
+      
+      System.out.println("100 taka note: "+n100);
+      System.out.println("50 taka note: "+n50);
+      System.out.println("20 taka note: "+n20);
+      System.out.println("10 taka note: "+n10);
+      System.out.println("5 taka coin: "+n5);
+      System.out.println("2 taka coin: "+n2);
+      System.out.println("1 taka coin: "+n1);
+     }
+    
+    else if (given ==paid){
+    System.out.println("The returned amount is 0 taka");
+    }
+    
+    else {
+      int more = paid - given;
+      System.out.println("Please pay "+more+" taka more");
+    }
+    
+  }
+}
+
+
+
+//Task 6
+import java.util.Scanner;
+public class Task6{
+  public static void main(String[]args){
+    
+    Scanner sc= new Scanner(System.in);
+    
+    System.out.println("Input the 1st number: ");
+    int x= sc.nextInt();
+    System.out.println("Input the 2nd number: ");
+    int y= sc.nextInt();
+    System.out.println("Input the 3rd number:");
+    int z= sc.nextInt();
+    
+    if (x==y && x==z){
+      System.out.println("All numbers are equal");
+    }
+    else if (y==x || y==z || z==x){
+      System.out.println("Neither all are equal or different");
+    }
+    else if (z!=y && z!=x && x!=y){
+      System.out.println("All numbers are different");
+    }
+    
+  }
+}
